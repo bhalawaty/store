@@ -14,7 +14,24 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
+Route::prefix('dashboard')->group(function () {
 
-Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('admin-Login', 'Auth\AdminLoginController@login')->name('admin.auth.login');
+
+    Route::post('/loginAdmin', 'Auth\AdminLoginController@loginAdmin')->name('admin.auth.loginAdmin');
+
+
+});
+
+Route::group(['middleware' => 'admin'], function () {
+
+    Route::prefix('dashboard')->group(function () {
+        Route::post('logout', 'Auth\AdminLoginController@logout')->name('admin.auth.logout');
+        Route::get('/admin', 'admin\AdminController@index')->name('admin.admin.dashboard');
+
+
+    });
+});
