@@ -13,11 +13,11 @@ class Product extends Model
 
     public function categories()
     {
-        return $this->belongsToMany(Category::class);
+        return $this->belongsToMany(Category::class,'category_product');
     }
 
     public function packages()
     {
-        return $this->belongsToMany(Package::class);
+        return $this->belongsToMany(Package::class ,'package_product');
     }
 }
