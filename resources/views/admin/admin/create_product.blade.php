@@ -24,7 +24,7 @@
                 @csrf
                 <div class="form-group">
                     <label for="exampleInputEmail1">product name </label>
-                    <textarea type="text" name="name" class="form-control" required></textarea>
+                    <input type="text" name="name" class="form-control" required/>
                     <small id="name" class="form-text text-muted"></small>
                 </div>
                 <div class="form-group">
