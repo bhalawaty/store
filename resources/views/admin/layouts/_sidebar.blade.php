@@ -33,7 +33,9 @@
             </span>
                 </a>
                 <ul class="treeview-menu">
-
+                    <li><a href="{{route('get.create.products.admin')}}">add product</a></li>
+                    <li><a href="{{route('get.create.category.admin')}}">add category</a></li>
+                    <li><a href="{{route('get.create.package.admin')}}">add package</a></li>
                 </ul>
             </li>
             <li class="treeview">

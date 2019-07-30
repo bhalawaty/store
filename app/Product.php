@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
+    protected  $guarded=[];
+
     public function admin()
     {
         return $this->belongsTo(Admin::class);
