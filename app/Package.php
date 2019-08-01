@@ -26,6 +26,6 @@ class Package extends Model
 
     public function category()
     {
-        return $this->belongsTo(Category::class,'category_product');
+        return $this->belongsTo(Category::class);
     }
 }

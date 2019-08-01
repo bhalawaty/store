@@ -18,13 +18,14 @@ class CreatePackagesTable extends Migration
             $table->unsignedInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
 
-            $table->unsignedInteger('admin_id');
+            $table->unsignedInteger('admin_id')->nullable();
             $table->foreign('admin_id')->references('id')->on('admins')->onDelete('cascade');
 
             $table->string('name');
             $table->integer('price');
             $table->integer('discount');
             $table->integer('minnumproducts');
+            $table->integer('modify')->nullable();
             $table->timestamps();
         });
 
