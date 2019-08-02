@@ -62,11 +62,13 @@
 
                                         </div>
                                     </li>
-                                    <button type="button" class="btn btn-primary"><a style="color: white"
-                                                                                     href="{{route('select.package',$package->id)}}">select</a>
+                                    <button style="border-radius: 0;" type="button" class="btn btn-primary"><a
+                                            href="{{route('select.package',$package->id)}}">select</a>
                                     </button>
 
-                                    <button type="submit" class="btn btn-success">modify ur package</button>
+                                    <button style="border-radius: 0;" type="submit" class="btn btn-success">MODIFY YOUR
+                                        PACKAGE
+                                    </button>
                                 </ul>
 
                             </form>
