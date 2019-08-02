@@ -66,7 +66,8 @@
                                             href="{{route('select.package',$package->id)}}">select</a>
                                     </button>
 
-                                    <button style="border-radius: 0;" type="submit" class="btn btn-success">MODIFY YOUR
+                                    <button style="border-radius: 0;" type="submit" class="btn btn-success">SELECT TO
+                                        MODIFY YOUR
                                         PACKAGE
                                     </button>
                                 </ul>

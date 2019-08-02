@@ -83,5 +83,12 @@ class PackageController extends Controller
 
     }
 
+    public function destroyPackage(Package $package)
+    {
+        $package->delete();
+
+        return Redirect::route('all_package');
+    }
+
 
 }

@@ -104,11 +104,11 @@
 
                     </ul>
 
-                    <button class="btn btn-primary" type="button">
+                    <button class="btn btn-danger" type="button">
 
-                        <a href="{{route('all_package')}}">
+                        <a href="{{route('destroyPackage.package',$package->id)}}">
 
-                            submit all changes
+                            cancel your changes
 
                         </a>
 

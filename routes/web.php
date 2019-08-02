@@ -20,7 +20,7 @@ Route::get('/all_packages', 'PackageController@index')->name('all_package');
 
 Route::post('/package', 'PackageController@store')->name('store.package');
 Route::get('/package/{package}', 'PackageController@showP')->name('showP.package');
-
+Route::get('/delete/package/{package}', 'PackageController@destroyPackage')->name('destroyPackage.package');
 
 Route::get('/select_package/{package}', 'PackageController@show')->name('select.package');
 
