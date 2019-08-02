@@ -5,22 +5,29 @@
 
     <section class="content-header">
 
-        <h1>
-            all packages
+        <div class="container">
+            <div>
+                <div style="float: left;width: 50%">
+                    <h1>
+                        all packages
+                    </h1>
 
-        </h1>
+                </div>
+                <div style="float: right;width: 50%">
 
+                </div>
+                <h1>my packages:{{count($package->userPackages)}}</h1>
+            </div>
+        </div>
 
     </section>
 
     <div class="container">
 
+
         <div class="row">
-
             @foreach($packages as $package)
-
                 @if(!$package->modify==1)
-
                     <div class="col-4">
                         <div class="card " style="margin-bottom:10px;border:1px solid grey ;">
                             <form method="Post" action="/package">

@@ -16,10 +16,10 @@ class PackageController extends Controller
         $this->middleware('auth');
     }
 
-    public function index()
+    public function index(Package $package)
     {
         $packages = Package::all();
-        return view('index', compact('packages'));
+        return view('index', compact('packages', 'package'));
     }
 
     public function store(Request $request, Product $product)

@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class Package extends Model
 {
@@ -49,5 +50,13 @@ class Package extends Model
             $sum += $product->price;
         }
         return $sum;
+    }
+
+    public function userPackages()
+    {
+        $user = Auth::user();
+
+        $N = $user->packages();
+        return $N;
     }
 }
