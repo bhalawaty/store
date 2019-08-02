@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-10">
@@ -17,24 +18,19 @@
                         <li class="list-group-item">
                             <div class="input-group">
 
-
                         @foreach($package->products as $product)
                             <li class="list-group-item" value="{{$product->id}}">{{$product->name}}
                                 :<strong>{{$product->price}}
                                     $</strong>
                                 <button class="btn btn-outline-danger" type="button"><a
+                                        class="{{count($package->products) > $package->minnumproducts ? " ":"isDisabled"}}"
                                         href="/delete/product/package/{{$package->id}}/{{$product->id}}">remove</a>
                                 </button>
                             </li>
 
                         @endforeach
-
                         <div class="input-group-append">
-
-
                         </div>
-
-
                         </li>
 
                         <li class="list-group-item"><strong>choose products from
@@ -46,7 +42,9 @@
                             <li class="list-group-item" value="{{$product->id}}">{{$product->name}}
                                 :<strong>{{$product->price}}
                                     $</strong>
+
                                 <button class="btn btn-outline-danger" type="button"><a
+                                        class="{{ $package->products()->where('product_id',$product->id)->exists() ? 'isDisabled':''}}"
                                         href="/add/product/package/{{$package->id}}/{{$product->id}}">add</a></button>
                             </li>
                         @endforeach

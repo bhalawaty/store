@@ -28,4 +28,13 @@ class Package extends Model
     {
         return $this->belongsTo(Category::class);
     }
+//
+//    public function discount(){
+//
+//        $sum=0;
+//        foreach($this->products() as $product){
+//            $sum+=$product->price;
+//        }
+//        return $sum;
+//    }
 }

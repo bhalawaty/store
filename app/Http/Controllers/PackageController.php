@@ -46,6 +46,7 @@ class PackageController extends Controller
 
     public function showP(Package $package)
     {
+
         return view('package', compact('package'));
 
     }
@@ -70,7 +71,14 @@ class PackageController extends Controller
 
     public function add(Package $package, Product $product)
     {
-        $package->products()->attach($product);
+//        $sum=0;
+//        foreach($package->products as $product){
+//            $sum+=$product->price;
+//        }
+        if (!$package->products()->where('product_id', $product->id)->exists()) {
+            $package->products()->attach($product);
+        }
+
         return view('package', compact('package'));
 
     }
