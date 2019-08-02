@@ -19,7 +19,19 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
+    <style>
+        a {
+            color: white;
+            font-family: helvetica;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
 
+        a:hover {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
