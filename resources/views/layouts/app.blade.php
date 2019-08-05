@@ -14,17 +14,47 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link type="text/css" rel="stylesheet" href="{{ mix('css/app.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <style>
+        .isDisabled {
+            color: currentColor;
+            cursor: not-allowed;
+            pointer-events: none !important;
+            opacity: 0.5;
+            text-decoration: none;
+        }
         a {
             color: white;
             font-family: helvetica;
             text-decoration: none;
             text-transform: uppercase;
+        }
+        .a_:hover {
+            color: black;
+            font-family: helvetica;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .a_ {
+            color: black;
+            font-family: helvetica;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        .cart_{
+            background-color: red;
+            color: white;
+            padding: 3px;
+            margin: 0px 29px;
+            font-size: 15px;
+            border: 1px solid red;
+            border-radius: 40px;
         }
 
         a:hover {

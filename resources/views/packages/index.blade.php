@@ -3,24 +3,24 @@
 @section('content')
 
 
-    <section class="content-header">
 
-        <div class="container">
-            <div>
-                <div style="float: left;width: 50%">
-                    <h1>
-                        all packages
+            <div class="row container ">
+                <div  class="col-6" >
+                    <h1 style="float: left;">
+                        all packages:
                     </h1>
-
                 </div>
-                <div style="float: right;width: 50%">
-
+                <div class="col-6">
+                   <a class="a_" href="{{route('show.user.packages')}}"><h1 style="float: right;">
+                        <p class="cart_"><strong>{{count($package->userPackages)}}</strong></p>
+                        <i class="fas fa-cart-plus" style="font-size:36px">
+                        </i>
+                    </h1></a>
                 </div>
-                <h1>my packages:{{count($package->userPackages)}}</h1>
             </div>
-        </div>
 
-    </section>
+
+
 
     <div class="container">
 
@@ -43,14 +43,19 @@
                                     <input type="hidden" name="products[]" value="{{$product->id}}">
                                 @endforeach
                                 <div class="card-header">{{$package->name}}
-                                    <div style="float: right">{{$package->price}}$</div>
+                                    <div style="float: right">{{$package->sum($package) }}$</div>
+
+                                </div>
+                                <div class="card-header">package price with discount
+                                    <div style="float: right">{{ $package->discount($package)}}$</div>
+
                                 </div>
 
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item"><strong>category
                                             name:</strong>{{$package->category->name}}</li>
-                                    <li class="list-group-item"><strong>category
-                                            discount:</strong>{{$package->discount}}$
+                                    <li class="list-group-item"><strong>package
+                                            discount:</strong>{{$package->discount}}%
                                     </li>
 
                                     <li class="list-group-item"><strong>all products :</strong></li>

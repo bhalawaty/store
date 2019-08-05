@@ -19,7 +19,7 @@ class PackageController extends Controller
     public function index(Package $package)
     {
         $packages = Package::all();
-        return view('index', compact('packages', 'package'));
+        return view('packages.index', compact('packages', 'package'));
     }
 
     public function store(Request $request, Product $product)
@@ -47,7 +47,7 @@ class PackageController extends Controller
     public function showP(Package $package)
     {
 
-        return view('package', compact('package'));
+        return view('packages.package', compact('package'));
 
     }
 
@@ -66,7 +66,7 @@ class PackageController extends Controller
 
         $package->products()->detach($product);
 
-        return view('package', compact('package'));
+        return view('packages.package', compact('package'));
     }
 
     public function add(Package $package, Product $product)
@@ -79,7 +79,7 @@ class PackageController extends Controller
             $package->products()->attach($product);
         }
 
-        return view('package', compact('package'));
+        return view('packages.package', compact('package'));
 
     }
 
@@ -88,6 +88,27 @@ class PackageController extends Controller
         $package->delete();
 
         return Redirect::route('all_package');
+    }
+
+    public function destroyYourPackage(Package $package)
+    {
+        $user=Auth::user();
+        $package->Users()->detach($user);
+
+        return back();
+    }
+
+    public function destroyModifiedPackage(Package $package)
+    {
+        $package->delete();
+
+        return back();
+    }
+
+    public function showUserPackages(){
+        $user=Auth::user();
+        $packages=$user->packages()->get();
+        return view('packages.user_delete_packages', compact('packages'));
     }
 
 

@@ -113,6 +113,15 @@
                         </a>
 
                     </button>
+                    <button class="btn btn-success" type="button">
+
+                        <a href="{{route('all_package')}}">
+
+                           back to all packages
+
+                        </a>
+
+                    </button>
 
                 </div>
 
